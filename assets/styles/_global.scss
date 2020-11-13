@@ -1,0 +1,102 @@
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: $header1;
+}
+li,
+button,
+label,
+input,
+a,
+p {
+  font-size: $text;
+}
+h2 {
+  font-size: $header2;
+}
+h3 {
+  font-size: $header3;
+}
+h4,
+h5 {
+  font-size: $header4;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $gray-text;
+}
+
+label {
+  font-size: 1.8rem;
+  // color: green;
+}
+
+// input[type="radio"] {
+//   font-size: 2rem;
+//   border: none;
+//   padding: 0 10px;
+//   margin: 0;
+//   width: 80%;
+//   background: none;
+// }
+
+input:focus,
+textarea:focus {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+button {
+  width: 18%;
+  background-color: #5c5c5c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  // border-radius: 4px;
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+button:hover {
+  background-color: #242424;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #000000;
+  text-shadow: none;
+}
+
+::selection {
+  color: #fff;
+  background: #000000;
+  text-shadow: none;
+}

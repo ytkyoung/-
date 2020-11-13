@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <title>가위 바위 보</title>
+  </head>
+  <body>
+    <main>
+      <section class="container level0">
+        <div id="outer" class="game level1 box">
+          <div id="first" class="game-text level2 box1">
+            <h1 id="runden-anzahl">가위 바위 보 0/5</h1>
+          </div>
+          <div id="second" class="game-runden level2 box2">
+            <h3>Rounds</h3>
+            <div class="formular level3">
+              <form id="form" class="form-box" name="formTest">
+                <div class="form-control">
+                  <!-- <input
+                    id="drei-runden"
+                    name="runden"
+                    value="3"
+                    type="radio"
+                    checked
+                  />
+                  <label for="drei-runden">3</label> -->
+                  <input
+                    id="fuenf-runden"
+                    name="runden"
+                    value="5"
+                    type="radio"
+                    checked
+                  />
+                  <label for="fuenf-runden">5</label>
+
+                  <input
+                    id="zehn-runden"
+                    name="runden"
+                    value="10"
+                    type="radio"
+                  />
+                  <label for="zehn-runden">10</label>
+
+                  <input
+                    id="fuenfzehn-runden"
+                    name="runden"
+                    value="15"
+                    type="radio"
+                  />
+                  <label for="fuenfzehn-runden">15</label>
+
+                  <input
+                    id="zwanzig-runden"
+                    name="runden"
+                    value="20"
+                    type="radio"
+                  />
+                  <label for="zwanzig-runden">20</label>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="third" class="game-score-board level2 box3">
+            <div class="user1-label level3">
+              <h3>User <span id="avatar-player">😜</span></h3>
+            </div>
+            <div id="player-punkte" class="level3">0</div>
+            <div class="doppelpunkt level">:</div>
+            <div id="computer-punkte" class="level3">0</div>
+            <div class="user2-label level3">
+              <h3>Computer <span id="avatar-computer">🤖</span></h3>
+            </div>
+          </div>
+
+          <div class="intro level2">
+            <h1>✌️ xx 👊 xx 🖐 xx 🖖 xx 🦎</h1>
+            <button id="play">Let's go!!!</button>
+          </div>
+
+          <div class="restart level2 fadeOut">
+            <h1 id="restart-text">가위✌️ 바위👊 보🖐 스팍🖖 도마뱀🦎</h1>
+            <div id="winner"></div>
+            <button id="replay">restart</button>
+            <div class="recPast"></div>
+          </div>
+
+          <div id="fourth" class="game-arena level2 box4 fadeOut">
+            <div class="haende">
+              <div id="player-hand" class="hands level3">👊</div>
+              <div class="versus">vs</div>
+              <div id="computer-hand" class="hands level3">👊</div>
+            </div>
+          </div>
+          <div id="fifth" class="game-text-banner level2 box5">
+            <h2 id="letsPlay">Let's play</h2>
+          </div>
+          <div id="sixt" class="game-auswahl level2 box6">
+            <button id="schere" class="level3">scissors</button>
+            <button id="stein" class="level3">rock</button>
+            <button id="papier" class="level3">paper</button>
+            <button id="spock" class="level3">spock</button>
+            <button id="lizard" class="level3">lizard</button>
+          </div>
+          <div id="seventh" class="game-ergebnisse level2 box7">
+            <div id="demo"></div>
+            <div id="demo1"><h2>😷🐹✌️</h2></div>
+            <div id="demo2"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

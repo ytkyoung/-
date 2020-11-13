@@ -1,0 +1,19 @@
+$header1: 2.5rem;
+$header2: 2.3rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2rem;
+$gradient: linear-gradient(left, #38d39f, #38a4d3);
+$background-color: #303030;
+$gray-text: #2c2c2c;
+$padding: 5rem;
+
+@mixin flex($justifiy, $algin, $direction) {
+  display: flex;
+  justify-content: $justifiy;
+  align-items: $algin;
+  flex-direction: $direction;
+}
+
+@import "global";
+@import "game";
