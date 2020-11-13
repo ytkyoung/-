@@ -1,7 +1,8 @@
 console.log('test');
 
 // Reset-Knopf // im Notfall in die Console kopieren und refresh
-// localStorage.removeItem('counter');
+// Aktiviert ---> bugggggg
+localStorage.removeItem('counter');
 
 let playerPunkte = 0;
 let computerPunkte = 0;
@@ -60,6 +61,7 @@ start();
 const randomNumber = function (arrayLaenge) {
   return Math.floor(Math.random() * arrayLaenge.length);
 };
+console.log(localStorage.getItem('counter'));
 
 // LocalStorage fuer Anzahl der gespielten Spiele
 if (localStorage.getItem('counter') === 'undefined') {
@@ -110,14 +112,14 @@ const reset = () => {
 // Restart Game
 const restartGame = () => {
   let tempCount = localStorage.getItem('counter') * 1;
-  // console.log(typeof tempCount);
+  console.log(typeof tempCount);
   tempCount += 1;
   // console.log(tempCount);
   counter = tempCount;
   localStorage.setItem('counter', tempCount);
 
-  // const workaround = localStorage.getItem('counter');
-  // console.log(workaround);
+  const workaround = localStorage.getItem('counter');
+  console.log(workaround);
   // res.innerHTML = workaround;
 
   const restartButton = document.querySelector('.restart button');
@@ -177,19 +179,19 @@ const create = function () {
 const winStats = function () {
   const createdDiv = document.querySelectorAll('.lastThreeRounds');
   console.log(createdDiv.length);
-  if (createdDiv.length % 4 === 0 && counter < 10) {
+  if (createdDiv.length % 4 === 0) {
     document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Weiter rudern 🚣‍♀️🚣‍♀️🚣‍♀️!</h3>`;
     return createdDiv.forEach((el) => el.remove());
   }
-  if (counter % 5 === 0) {
-    console.log(counter);
-    document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Immer noch am  🚣‍♀️🚣‍♀️🚣‍♀️?</h3>`;
-  }
-  if (counter % 6 === 0) {
-    console.log(counter);
-    document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Nix zu tun?</h3>`;
-    return createdDiv.forEach((el) => el.remove());
-  }
+  // if (counter % 5 === 0) {
+  //   console.log(counter);
+  //   document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Immer noch am  🚣‍♀️🚣‍♀️🚣‍♀️?</h3>`;
+  // }
+  // if (counter % 6 === 0) {
+  //   console.log(counter);
+  //   document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Nix zu tun?</h3>`;
+  //   return createdDiv.forEach((el) => el.remove());
+  // }
 };
 
 // Ermittlung des Gewinners
@@ -209,9 +211,10 @@ function gewinnerErmittlung(playerP, computerP) {
       thumbAusgabe = '👎';
     }
 
-    setTimeout(() => {
-      restartGame();
-    }, 2000);
+    restartGame();
+    // setTimeout(() => {
+    //   restartGame();
+    // }, 2000);
   }
 }
 
