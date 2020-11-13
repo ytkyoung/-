@@ -467,13 +467,8 @@ section {
           flex-direction: row;
 }
 
-.lastThreeRounds {
-  background-color: #0278ae;
-}
-
 .lastThreeRounds h1 {
   font-size: 4.5rem;
-  background-color: #02ae1f;
 }
 
 @-webkit-keyframes flipIt {

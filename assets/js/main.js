@@ -166,7 +166,7 @@ const create = function () {
   introDiv.append(introH1);
   introH1.append(pIntroDiv);
 
-  introDiv.className = 'test';
+  introDiv.className = 'lastThreeRounds';
 
   section.append(introDiv);
   introDiv.append(introH1);
@@ -184,7 +184,6 @@ const winStats = function () {
   if (counter % 5 === 0) {
     console.log(counter);
     document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Immer noch am  🚣‍♀️🚣‍♀️🚣‍♀️?</h3>`;
-    return createdDiv.forEach((el) => el.remove());
   }
   if (counter % 6 === 0) {
     console.log(counter);
