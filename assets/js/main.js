@@ -1,9 +1,5 @@
 console.log('test');
 
-// Reset-Knopf // im Notfall in die Console kopieren und refresh
-// Aktiviert ---> bugggggg
-localStorage.removeItem('counter');
-
 let playerPunkte = 0;
 let computerPunkte = 0;
 let rundenAnzahl = 5;
@@ -12,7 +8,6 @@ let winner = '';
 let winnerAusgabe = '';
 let thumbAusgabe = '';
 let bisherigeErgebnisse = [];
-let counter = 0;
 
 const playBtn = document.querySelector('.intro button');
 const introScreen = document.querySelector('.intro');
@@ -20,9 +15,9 @@ const gameArena = document.querySelector('.game-arena');
 
 const rundenAktuell = document.getElementById('runden-anzahl');
 const bisherigeErgebnisseAnzeige = document.getElementById('demo1');
-
-const avatarPlayer = ['😄', '😁', '😆', '🤗', '🤓', '😎', '😙', '😚', '🤠', '😋', '😜', '🤣'];
-const avatarComputer = ['🤖', '👾', '👻', '👽', '💻', '🖥', '🕹', '👸'];
+// const res = document.getElementById('demo');
+const avatarPlayer = ['😄', '😁', '😆', '🤗', '🤓', '😎', '😙', '😚', '🤠', '😋', '😜', '🤣', '👸', '👩‍🌾'];
+const avatarComputer = ['🤖', '👾', '👻', '👽', '💻', '🖥', '🕹'];
 const avatarVictory = ['😝', '😜', '😁', '😄', '😀', '😍', '🥳', '🤩'];
 const avatarLost = ['😩', '😮', '😬', '😕', '😳', '😑', '🙄', '🤕', '🤮'];
 const playerHand = document.getElementById('player-hand');
@@ -61,16 +56,6 @@ start();
 const randomNumber = function (arrayLaenge) {
   return Math.floor(Math.random() * arrayLaenge.length);
 };
-console.log(localStorage.getItem('counter'));
-
-// LocalStorage fuer Anzahl der gespielten Spiele
-if (localStorage.getItem('counter') === 'undefined') {
-  // checkt ob es einen Local storage eintrag gibt
-
-  localStorage.setItem('counter', 0); // wenn es keinen gibt  wird er gesetzt. Mit dem key counter, und dem Startwert 0
-} else {
-  console.log(`in da localStorage -> null bei reset${localStorage.getItem('counter')}`);
-}
 
 let avaPlRanAktuell = '';
 let avaCoRanAktuell = '';
@@ -95,6 +80,7 @@ const startGame = () => {
 
 const reset = () => {
   // console.log('resettttt');
+
   playerPunkte = 0;
   computerPunkte = 0;
   rundenAktuell.innerHTML = `가위 바위 보 0/${rundenAnzahl}`;
@@ -109,19 +95,37 @@ const reset = () => {
   randomAvatarP();
 };
 
+const winStats = function () {
+  const createdDiv = document.querySelectorAll('.lastThreeRounds');
+  console.log(`${createdDiv.length}testlaenge`);
+
+  if (createdDiv.length % 4 === 0) {
+    document.getElementById('restart-text').innerHTML = `<h3>Weiter rudern 🚣‍♀️🚣‍♀️🚣‍♀️!</h3>`;
+    return createdDiv.forEach((el) => el.remove());
+  }
+  document.getElementById('restart-text').innerHTML = `<h3> 가위✌️ 바위👊 보🖐 스팍🖖 도마뱀🦎</h3>`;
+};
+
+// im restart Fenster zeigt den Gewinner und die Rundenanzahl an
+const create = function () {
+  const section = document.querySelector('.recPast');
+  const introDiv = document.createElement('div');
+  const introH1 = document.createElement('h1');
+
+  const pIntroDiv = document.createTextNode(`${thumbAusgabe}${winnerAusgabe}`);
+
+  introDiv.append(introH1);
+  introH1.append(pIntroDiv);
+
+  introDiv.className = 'lastThreeRounds';
+
+  section.append(introDiv);
+  introDiv.append(introH1);
+
+  winStats();
+};
 // Restart Game
 const restartGame = () => {
-  let tempCount = localStorage.getItem('counter') * 1;
-  console.log(typeof tempCount);
-  tempCount += 1;
-  // console.log(tempCount);
-  counter = tempCount;
-  localStorage.setItem('counter', tempCount);
-
-  const workaround = localStorage.getItem('counter');
-  console.log(workaround);
-  // res.innerHTML = workaround;
-
   const restartButton = document.querySelector('.restart button');
   const restartScreen = document.querySelector('.restart');
   const match = document.querySelector('.game-arena');
@@ -133,7 +137,6 @@ const restartGame = () => {
   restartButton.addEventListener('click', () => reset());
   create();
 };
-
 // Runden
 const runden = document.getElementsByName('runden');
 // Wie viele Runden?
@@ -157,43 +160,6 @@ function einerVon(playerP, computerP) {
   rundenAktuell.innerHTML = `가위 바위 보 ${spielstand}/${rundenAnzahl}`;
 }
 
-// im restart Fenster zeigt den Gewinner und die Rundenanzahl an
-const create = function () {
-  const section = document.querySelector('.recPast');
-  const introDiv = document.createElement('div');
-  const introH1 = document.createElement('h1');
-
-  const pIntroDiv = document.createTextNode(`${thumbAusgabe}${winnerAusgabe}`);
-
-  introDiv.append(introH1);
-  introH1.append(pIntroDiv);
-
-  introDiv.className = 'lastThreeRounds';
-
-  section.append(introDiv);
-  introDiv.append(introH1);
-
-  winStats();
-};
-// localStorage.removeItem('counter');
-const winStats = function () {
-  const createdDiv = document.querySelectorAll('.lastThreeRounds');
-  console.log(createdDiv.length);
-  if (createdDiv.length % 4 === 0) {
-    document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Weiter rudern 🚣‍♀️🚣‍♀️🚣‍♀️!</h3>`;
-    return createdDiv.forEach((el) => el.remove());
-  }
-  // if (counter % 5 === 0) {
-  //   console.log(counter);
-  //   document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Immer noch am  🚣‍♀️🚣‍♀️🚣‍♀️?</h3>`;
-  // }
-  // if (counter % 6 === 0) {
-  //   console.log(counter);
-  //   document.getElementById('restart-text').innerHTML = `<h3>Runde ${counter}. Nix zu tun?</h3>`;
-  //   return createdDiv.forEach((el) => el.remove());
-  // }
-};
-
 // Ermittlung des Gewinners
 function gewinnerErmittlung(playerP, computerP) {
   if (playerP + computerP >= rundenAnzahl) {
@@ -214,7 +180,7 @@ function gewinnerErmittlung(playerP, computerP) {
     restartGame();
     // setTimeout(() => {
     //   restartGame();
-    // }, 2000);
+    // }, 500);
   }
 }
 
@@ -225,7 +191,8 @@ const playhand = function (e) {
   // console.log(e.target.id);
   // console.log(e.target.innerText);
   const player = e.target.id;
-  console.log(player);
+
+  // console.log(player);
   let playerHandSymbol = e.target.id;
 
   if (playerHandSymbol === 'schere') {
@@ -252,16 +219,16 @@ const playhand = function (e) {
 
     const haendeWert = haende.map((x) => x.wert);
     const haendeSymbol = haende.map((x) => x.symbol);
-    const haendeFarben = haende.map((x) => x.farbe);
+    // const haendeFarben = haende.map((x) => x.farbe);
     // console.log(haendeWert);
     // console.log(haendeSymbol);
     const randomZahl = Math.floor(Math.random() * haende.length);
     const zufallsHand = haendeWert[randomZahl];
     const zufallsHandSymbol = haendeSymbol[randomZahl];
-    const zufallsHandFarbe = haendeFarben[randomZahl];
-    console.log(zufallsHand);
-    console.log(zufallsHandSymbol);
-    console.log(zufallsHandFarbe);
+    // const zufallsHandFarbe = haendeFarben[randomZahl];
+    // console.log(zufallsHand);
+    // console.log(zufallsHandSymbol);
+    // console.log(zufallsHandFarbe);
     bisherigeErgebnisse.push(playerHandSymbol, zufallsHandSymbol);
     document.getElementById('demo1').innerHTML = bisherigeErgebnisse.join('');
 
@@ -272,12 +239,12 @@ const playhand = function (e) {
     // console.log(e.target);
     const gewinner = document.querySelector('.game-text-banner > h2');
     if (player === 'schere' && zufallsHand === 'schere') {
-      gewinner.innerHTML = `it's a tie`;
+      gewinner.innerHTML = ` 🕶 it's a tie 🕶`;
       playerHand.innerHTML = '✌️';
       computerHand.innerHTML = '✌️';
     }
     if (player === 'schere' && zufallsHand === 'stein') {
-      gewinner.innerHTML = '(and as it always has) Rock crushes Scissors';
+      gewinner.innerHTML = '(and as it always has) 💃 Rock crushes Scissors';
       playerHand.innerHTML = '✌️';
       computerHand.innerHTML = '👊';
       computerPunkte += 1;
@@ -289,7 +256,7 @@ const playhand = function (e) {
       playerPunkte += 1;
     }
     if (player === 'schere' && zufallsHand === 'spock') {
-      gewinner.innerHTML = 'Spock smashes Scissors 🖖🔫🤘🎸';
+      gewinner.innerHTML = 'Spock smashes Scissors 🖖🔫🪓✂️✂️';
       playerHand.innerHTML = '✌️';
       computerHand.innerHTML = '🖖';
       computerPunkte += 1;
@@ -302,18 +269,18 @@ const playhand = function (e) {
     }
     /// //////////
     if (player === 'stein' && zufallsHand === 'schere') {
-      gewinner.innerHTML = '(and as it always has) Rock crushes Scissors';
+      gewinner.innerHTML = '(and as it always has) 👗🤘🎸 Rock crushes Scissors ✂️';
       playerHand.innerHTML = '👊';
       computerHand.innerHTML = '✌️';
       playerPunkte += 1;
     }
     if (player === 'stein' && zufallsHand === 'stein') {
-      gewinner.innerHTML = `it's a tie`;
+      gewinner.innerHTML = `🤘🎸it's rockin' roll🤘🎸`;
       playerHand.innerHTML = '👊';
       computerHand.innerHTML = '👊';
     }
     if (player === 'stein' && zufallsHand === 'papier') {
-      gewinner.innerHTML = 'Paper covers Rock';
+      gewinner.innerHTML = 'Paper covers Rock 🗞🕵️‍♀️🤘🎸';
       playerHand.innerHTML = '👊';
       computerHand.innerHTML = '🖐';
       computerPunkte += 1;
@@ -325,7 +292,7 @@ const playhand = function (e) {
       computerPunkte += 1;
     }
     if (player === 'stein' && zufallsHand === 'lizard') {
-      gewinner.innerHTML = 'Rock crushes Lizard';
+      gewinner.innerHTML = 'Rock crushes Lizard 🤘🎸🦎';
       playerHand.innerHTML = '👊';
       computerHand.innerHTML = '🦎';
       playerPunkte += 1;
@@ -333,7 +300,7 @@ const playhand = function (e) {
 
     /// //////////
     if (player === 'papier' && zufallsHand === 'schere') {
-      gewinner.innerHTML = 'Scissors cuts Paper';
+      gewinner.innerHTML = 'Scissors cuts Paper ✂️📜';
       playerHand.innerHTML = '🖐';
       computerHand.innerHTML = '✌️';
       computerPunkte += 1;
@@ -345,8 +312,7 @@ const playhand = function (e) {
       playerPunkte += 1;
     }
     if (player === 'papier' && zufallsHand === 'papier') {
-      gewinner.innerHTML = `it's a tie`;
-
+      gewinner.innerHTML = `🔥 it's a tie 🔥`;
       playerHand.innerHTML = '🖐';
       computerHand.innerHTML = '🖐';
     }
@@ -358,7 +324,7 @@ const playhand = function (e) {
       playerPunkte += 1;
     }
     if (player === 'papier' && zufallsHand === 'lizard') {
-      gewinner.innerHTML = 'Lizard eats Paper';
+      gewinner.innerHTML = 'Lizard eats Paper 🦎🍽😋📄';
       playerHand.innerHTML = '🖐';
       computerHand.innerHTML = '🦎';
       computerPunkte += 1;
@@ -387,7 +353,6 @@ const playhand = function (e) {
       gewinner.innerHTML = 'New Spock meets Old Spock 🖖🕔🚀🕤🤪';
       playerHand.innerHTML = '🖖';
       computerHand.innerHTML = '🖖';
-      playerPunkte += 1;
     }
     if (player === 'spock' && zufallsHand === 'lizard') {
       gewinner.innerHTML = 'Lizard poisons Spock 🖖🤢🍄🍭🤪';
@@ -397,7 +362,6 @@ const playhand = function (e) {
     }
     /// //////////
     if (player === 'lizard' && zufallsHand === 'schere') {
-      console.log('papier schere');
       gewinner.innerHTML = 'Scissors decapitates Lizard ✂️🦎😵';
       playerHand.innerHTML = '🦎';
       computerHand.innerHTML = '✌️';
@@ -407,10 +371,10 @@ const playhand = function (e) {
       gewinner.innerHTML = 'Rock crushes Lizard 🤘🎸🪓🦎';
       playerHand.innerHTML = '🦎';
       computerHand.innerHTML = '👊';
-      playerPunkte += 1;
+      computerPunkte += 1;
     }
     if (player === 'lizard' && zufallsHand === 'papier') {
-      gewinner.innerHTML = 'Lizard eats Paper 🦎🍽😋';
+      gewinner.innerHTML = 'Lizard eats Paper 🦎🍽📄😋';
       playerHand.innerHTML = '🦎';
       computerHand.innerHTML = '🖐';
       playerPunkte += 1;
@@ -446,10 +410,10 @@ function handler(ev) {
   const e = ev || window.Event;
   const target = e.target || e.srcElement;
   this.classList.toggle('selected');
-  console.log(`geklickt auf Knoten mit TARGET ID ${target.id}`);
-  console.log(`geklickt auf Knoten mi ID ${this.id}`);
-  console.log(target.classList);
-  console.log(this);
+  // console.log(`geklickt auf Knoten mit TARGET ID ${target.id}`);
+  // console.log(`geklickt auf Knoten mi ID ${this.id}`);
+  // console.log(target.classList);
+  // console.log(this);
 
   target.style.backgroundColor = `#495464`;
   target.style.color = 'snow';

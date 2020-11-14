@@ -299,6 +299,10 @@ section {
   height: 10vh;
 }
 
+.hands {
+  z-index: 3;
+}
+
 #player-hand {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
@@ -358,7 +362,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 75.6%;
+  height: 70.6%;
   top: 23%;
   width: 80%;
   -webkit-transition: opacity 0.5s ease;
@@ -403,9 +407,9 @@ section {
   z-index: 2;
 }
 
-.restart h1 {
-  font-size: 5rem;
-  margin-bottom: 7rem;
+.restart h3 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
 }
 
 .restart button {
@@ -468,7 +472,7 @@ section {
 }
 
 .lastThreeRounds h1 {
-  font-size: 4.5rem;
+  font-size: 3rem;
 }
 
 @-webkit-keyframes flipIt {
@@ -686,6 +690,12 @@ section {
   .game {
     background-color: whitesmoke;
     width: 100%;
+  }
+  #player-hand {
+    font-size: 6rem;
+  }
+  #computer-hand {
+    font-size: 6rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -62,27 +62,27 @@ section {
   transition: all 1s ease-in-out;
 }
 
-.game-text {
-  // background-color: blue;
-}
-.game-runden {
-  // background-color: lightcoral;
-}
-.game-score-board {
-}
-.game-arena {
-  // background-color: violet;
-}
+// .game-text {
+//   // background-color: blue;
+// }
+// .game-runden {
+//   // background-color: lightcoral;
+// }
+// .game-score-board {
+// }
+// .game-arena {
+//   // background-color: violet;
+// }
 
-.game-text-banner {
-  // background-color: rgb(161, 51, 161);
-}
-.game-auswahl {
-  // background-color: lavender;
-}
-.game-ergebnisse {
-  // background-color: lightgrey;
-}
+// .game-text-banner {
+//   // background-color: rgb(161, 51, 161);
+// }
+// .game-auswahl {
+//   // background-color: lavender;
+// }
+// .game-ergebnisse {
+//   // background-color: lightgrey;
+// }
 
 /// arena
 .haende {
@@ -90,6 +90,9 @@ section {
   width: 60%;
   height: 10vh;
   // background-color: rgb(5, 201, 250);
+}
+.hands {
+  z-index: 3;
 }
 
 #player-hand {
@@ -135,7 +138,7 @@ section {
 .intro {
   position: absolute;
   @include flex(center, center, column);
-  height: 75.6%;
+  height: 70.6%;
   top: 23%;
   width: 80%;
   transition: opacity 0.5s ease;
@@ -166,9 +169,9 @@ section {
   z-index: 2;
 }
 
-.restart h1 {
-  font-size: 5rem;
-  margin-bottom: 7rem;
+.restart h3 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
 }
 
 .restart button {
@@ -218,11 +221,11 @@ section {
   @include flex(center, center, row);
 }
 
-.lastThreeRounds {
-  // background-color: #0278ae;
-}
+// .lastThreeRounds {
+//   // background-color: #0278ae;
+// }
 .lastThreeRounds h1 {
-  font-size: 4.5rem;
+  font-size: 3rem;
   // background-color: #02ae1f;
 }
 
@@ -341,6 +344,14 @@ section {
   .game {
     background-color: rgb(245, 245, 245);
     width: 100%;
+  }
+  #player-hand {
+    // background-color: yellow;
+    font-size: 6rem;
+  }
+  #computer-hand {
+    // background-color: yellow;
+    font-size: 6rem;
   }
 }
 
