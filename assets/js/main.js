@@ -148,7 +148,7 @@ const winStats = function() {
   if (createdDiv.length > 1) {
     plural = 'rounds';
   } else {
-    plural = 'round';
+    plural = 'lost';
   }
   document.querySelector('.last3').innerHTML = `Last ${createdDiv.length} ${plural}`;
 };
