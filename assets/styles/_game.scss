@@ -188,7 +188,7 @@ section {
   margin-bottom: 13rem;
 }
 .restart {
-  @include flex(center, center, column);
+  @include flex(space-evenly, center, column);
   position: absolute;
   top: 23%;
   height: 70.6%;
@@ -198,14 +198,13 @@ section {
   z-index: 2;
 }
 .restart-box {
-  @include flex(space-between, center, column);
+  @include flex(center, center, column);
   width: 70%;
-  padding: 5rem;
-  margin-bottom: 30rem;
+  margin-bottom: 25rem;
 }
 .restart h3 {
-  font-size: 3rem;
-  margin-bottom: 5rem;
+  font-size: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .restart button {
@@ -373,11 +372,11 @@ section {
 
   .restart h1 {
     font-size: 2.8rem;
-    margin-bottom: 8rem;
+    margin-bottom: 1rem;
   }
   .restart h3 {
     font-size: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
   }
 
   .restart button {
@@ -393,7 +392,7 @@ section {
     @include flex(space-between, center, column);
     width: 70%;
     padding: 5rem;
-    margin-bottom: 7rem;
+    margin-bottom: 0rem;
   }
 
   .box {
@@ -438,8 +437,8 @@ section {
 // @media screen and (min-width: 768px) {
 // }
 
-// @media (min-width: 992px) {
-// }
+@media (min-width: 992px) {
+}
 
-// @media (min-width: 1200px) {
-// }
+@media (min-width: 1200px) {
+}

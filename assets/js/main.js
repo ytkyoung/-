@@ -129,7 +129,6 @@ const reset = () => {
 
 const motivation = [
   `Weiter rudern 🚣‍♀️🚣‍♀️🚣‍♀️!`,
-  '🚣‍♀️🚣‍♀️🚣‍♀️ GoGoGo',
   'As you think, so shall you become 🥋🤸‍♂️',
   '🐳 done, dieser Kreis in der Mitte...🤔',
 ];
@@ -295,19 +294,19 @@ const playhand = function(e) {
       setTimeout(() => {
         computerHand.classList.add('winnerFarbeComputer');
         playerHand.classList.add('winnerFarbePlayer');
-      }, 300);
+      }, 500);
     };
 
     const winColorPlayer = function() {
       setTimeout(() => {
         playerHand.classList.add('winnerFarbePlayer');
-      }, 300);
+      }, 500);
     };
 
     const winColorComputer = function() {
       setTimeout(() => {
         computerHand.classList.add('winnerFarbeComputer');
-      }, 300);
+      }, 500);
     };
 
     const gewinner = document.querySelector('.game-text-banner > h4');
