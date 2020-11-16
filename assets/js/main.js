@@ -102,7 +102,7 @@ const zitate = ['Beam me up, Scotty 👨🏻‍🚀🛸', ' Fascinating!🖖', '
 const randomZitat = () => zitate[randomNumber(zitate)];
 
 const mitte = () => {
-  document.getElementById('letsPlay').innerHTML = 'finde dein Mitte, ohhhmmmmm 🍳';
+  document.getElementById('letsPlay').innerHTML = 'finde deine Mitte, ohhhmmmmm 🍳';
 };
 const kreis = document.querySelector('.versus');
 
