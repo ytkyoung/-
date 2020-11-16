@@ -200,11 +200,11 @@ section {
 .restart-box {
   @include flex(center, center, column);
   width: 70%;
-  margin-bottom: 30rem;
+  margin-bottom: 20rem;
 }
 .restart h3 {
-  font-size: 2.5rem;
-  margin-bottom: 3.5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 .restart button {
@@ -360,8 +360,8 @@ section {
     margin-bottom: 13rem;
   }
   #restart-text {
-    font-size: 4rem;
-    padding: 0 5%;
+    font-size: 2rem;
+    padding: 0 2%;
   }
   .restart {
     @include flex(space-around, center, column);

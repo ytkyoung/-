@@ -31,7 +31,7 @@ p {
 
 h1 {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: 1.5px;
   font-family: "Roboto Mono", monospace;
 }
@@ -215,8 +215,8 @@ section {
           flex-direction: row;
   height: 8%;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
 }
 
 .game-text {
@@ -500,9 +500,9 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -523,9 +523,9 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -534,13 +534,12 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 70%;
-  padding: 5rem;
-  margin-bottom: 30rem;
+  margin-bottom: 20rem;
 }
 
 .restart h3 {
-  font-size: 3rem;
-  margin-bottom: 5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 .restart button {
@@ -721,18 +720,17 @@ section {
   transition: all 1s ease;
 }
 
-@media screen and (max-width: 842px) {
+@media screen and (max-width: 789px) {
   section {
-    height: 100%;
     width: 100%;
   }
   .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -740,6 +738,7 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
   .intro {
     display: -webkit-box;
@@ -761,7 +760,7 @@ section {
     z-index: 2;
   }
   .intro h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin-bottom: 8rem;
   }
   .intro button {
@@ -772,13 +771,16 @@ section {
     font-size: 2rem;
     margin-bottom: 13rem;
   }
+  #restart-text {
+    font-size: 2rem;
+    padding: 0 2%;
+  }
   .restart {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -794,12 +796,12 @@ section {
     z-index: 2;
   }
   .restart h1 {
-    font-size: 2.8rem;
-    margin-bottom: 8rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
   .restart h3 {
-    font-size: 2rem;
-    margin-bottom: 5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
   .restart button {
     font-size: 3rem;
@@ -823,9 +825,9 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 70%;
+    width: 100%;
     padding: 5rem;
-    margin-bottom: 7rem;
+    margin-bottom: 0rem;
   }
   .box {
     display: -webkit-box;
@@ -843,10 +845,39 @@ section {
             flex-direction: row;
     min-height: 90vh;
   }
-  .box1 {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
+  #runden-anzahl {
+    font-size: 1.5rem;
+  }
+  .box3 h3 {
+    font-size: 1.3rem;
+  }
+  #avatar-player {
+    font-size: 2rem;
+  }
+  #avatar-computer {
+    font-size: 2rem;
+  }
+  .box3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 2rem;
+  }
+  .game-score-board {
+    background-color: #5d1049;
+  }
+  .box4 {
+    height: 45%;
   }
   .box6 {
     display: -webkit-box;
@@ -862,14 +893,26 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    height: 15%;
+    height: 10%;
     -webkit-box-flex: 1;
         -ms-flex: 1 0 100%;
             flex: 1 0 100%;
+    width: 100%;
+  }
+  .box7 {
+    height: 20%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+    width: 100%;
+    background-color: #e30425;
+  }
+  #letsPlay {
+    font-size: 1.5rem;
   }
   button {
     width: 100%;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
   }
   .game {
     background-color: whitesmoke;
@@ -896,10 +939,65 @@ section {
     transition: all 1s ease;
   }
   #player-hand {
-    font-size: 6rem;
+    font-size: 4.7rem;
   }
   #computer-hand {
-    font-size: 6rem;
+    font-size: 4.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .box1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+  .intro {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 70.6%;
+    top: 21%;
+    width: 80%;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+  }
+  .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 8rem;
+  }
+  .intro button {
+    font-size: 2rem;
+    width: 30%;
+    height: 50px;
+    border: none;
+    font-size: 2rem;
+    margin-bottom: 13rem;
+  }
+  .restart {
+    top: 21%;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .box1 {
+    font-size: 1rem;
+    background-color: red;
   }
 }
 /*# sourceMappingURL=style.css.map */
