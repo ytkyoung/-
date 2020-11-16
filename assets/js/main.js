@@ -128,7 +128,7 @@ const reset = () => {
 };
 
 const motivation = [
-  `Weiter rudern 🚣‍♀️🚣‍♀️🚣‍♀️!`,
+  `Weiterrudern 🚣‍♀️🚣‍♀️🚣‍♀️!`,
   'As you think, so shall you become 🥋🤸‍♂️',
   '🐳 done, dieser Kreis in der Mitte...🤔',
 ];
