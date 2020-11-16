@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="stylesheet" href="dist/css/style.css" />
     <title>가위 바위 보</title>
   </head>
   <body>
@@ -11,7 +11,7 @@
       <section class="container level0">
         <div id="outer" class="game level1 box">
           <div id="first" class="game-text level2 box1">
-            <h1 id="runden-anzahl">가위 바위 보 0/5</h1>
+            <h1 id="runden-anzahl">가위✌️ 바위👊 보🖐 스팍🖖 도마뱀🦎 0/5</h1>
           </div>
           <div id="second" class="game-runden level2 box2">
             <h3>Rounds</h3>
@@ -76,25 +76,31 @@
 
           <div class="intro level2">
             <h1>✌️ xx 👊 xx 🖐 xx 🖖 xx 🦎</h1>
-            <button id="play">Let's go!!!</button>
+            <button id="play">Let's play!</button>
           </div>
 
           <div class="restart level2 fadeOut">
-            <h1 id="restart-text">가위✌️ 바위👊 보🖐 스팍🖖 도마뱀🦎</h1>
-            <div id="winner"></div>
-            <button id="replay">restart</button>
-            <div class="recPast"></div>
+            <h3 id="restart-text">가위✌️ 바위👊 보🖐 스팍🖖 도마뱀🦎</h3>
+            <div class="restart-box">
+              <div id="winner"></div>
+              <button id="replay">restart</button>
+              <div class="last3 overline"></div>
+              <div class="recPast"></div>
+            </div>
           </div>
 
           <div id="fourth" class="game-arena level2 box4 fadeOut">
             <div class="haende">
-              <div id="player-hand" class="hands level3">👊</div>
-              <div class="versus">vs</div>
-              <div id="computer-hand" class="hands level3">👊</div>
+              <div class="left hands level3"><h5 id="player-hand">👊</h5></div>
+              <div class="versus"><h3>vs</h3></div>
+              <div class="right hands level3">
+                <h5 id="computer-hand">👊</h5>
+              </div>
             </div>
           </div>
           <div id="fifth" class="game-text-banner level2 box5">
-            <h2 id="letsPlay">Let's play</h2>
+            <h4 id="letsPlay">Float like a 🦋, sting like a 🐝.</h4>
+            <div id="muhammad-ali" class="overline">Muhammad Ali</div>
           </div>
           <div id="sixt" class="game-auswahl level2 box6">
             <button id="schere" class="level3">scissors</button>
