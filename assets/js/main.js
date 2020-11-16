@@ -144,13 +144,15 @@ const winStats = function() {
   }
   document.getElementById('restart-text').innerHTML = randomMotivation();
 
-  let plural;
+  let singularPlural;
   if (createdDiv.length > 1) {
-    plural = 'rounds';
+    singularPlural = 'rounds';
+    document.querySelector('.last3').innerHTML = `Last ${createdDiv.length} ${singularPlural}`;
   } else {
-    plural = 'lost';
+    createdDiv.innerHTML = '';
+    singularPlural = 'round';
+    document.querySelector('.last3').innerHTML = `Last ${singularPlural}`;
   }
-  document.querySelector('.last3').innerHTML = `Last ${createdDiv.length} ${plural}`;
 };
 
 // im restart Fenster zeigt den Gewinner
