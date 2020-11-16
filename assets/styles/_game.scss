@@ -47,7 +47,7 @@ section {
 
 .box4 {
   @include flex(space-evenly, center, row);
-  height: 49%;
+  height: 40%;
   flex: 1 0 100%;
 }
 // .game-arena {
@@ -326,14 +326,14 @@ section {
   transition: all 1s ease;
 }
 
-@media screen and (max-width: 842px) {
+@media screen and (max-width: 789px) {
   section {
-    height: 100%;
     width: 100%;
     // background-color: red;
   }
   .container {
-    @include flex(center, center, column);
+    @include flex(space-between, center, column);
+    width: 100%;
     // background-color: red;
     // border: 10px solid #fff;
   }
@@ -347,7 +347,7 @@ section {
     z-index: 2;
   }
   .intro h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin-bottom: 8rem;
   }
 
@@ -359,9 +359,12 @@ section {
     font-size: 2rem;
     margin-bottom: 13rem;
   }
-
+  #restart-text {
+    font-size: 4rem;
+    padding: 0 5%;
+  }
   .restart {
-    @include flex(center, center, column);
+    @include flex(space-around, center, column);
     height: 100%;
     top: 0%;
     width: 100%;
@@ -371,11 +374,11 @@ section {
   }
 
   .restart h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
   .restart h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
   }
 
@@ -390,7 +393,7 @@ section {
 
   .restart-box {
     @include flex(space-between, center, column);
-    width: 70%;
+    width: 100%;
     padding: 5rem;
     margin-bottom: 0rem;
   }
@@ -403,15 +406,48 @@ section {
   .box1 {
     flex: 1 1 100%;
   }
+  #runden-anzahl {
+    font-size: 1.5rem;
+  }
+  .box3 h3 {
+    font-size: 1.3rem;
+    // background-color: rgb(91, 151, 13);
+  }
+  #avatar-player {
+    font-size: 2rem;
+  }
+  #avatar-computer {
+    font-size: 2rem;
+  }
+  .box3 {
+    @include flex(space-between, center, row);
+    padding: 2rem;
+  }
+  .game-score-board {
+    background-color: $primary-color-800;
+  }
+  .box4 {
+    height: 45%;
+  }
 
   .box6 {
     @include flex(center, center, row);
-    height: 15%;
+    height: 10%;
     flex: 1 0 100%;
+    width: 100%;
+  }
+  .box7 {
+    height: 20%;
+    flex: 1 0 100%;
+    width: 100%;
+    background-color: $secondary-color;
+  }
+  #letsPlay {
+    font-size: 1.5rem;
   }
   button {
     width: 100%;
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
   .game {
     background-color: rgb(245, 245, 245);
@@ -435,11 +471,50 @@ section {
   }
 }
 
-// @media screen and (min-width: 768px) {
-// }
+@media screen and (min-width: 768px) {
+}
 
 @media (min-width: 992px) {
+  .box1 {
+    flex: 1 1 100%;
+  }
+
+  .intro {
+    position: absolute;
+    @include flex(center, center, column);
+    height: 70.6%;
+    top: 19%;
+    width: 80%;
+    transition: opacity 0.5s ease;
+    // background-color: #0278ae;
+    z-index: 2;
+  }
+
+  .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 8rem;
+  }
+
+  .intro button {
+    font-size: 2rem;
+    width: 30%;
+    height: 50px;
+    border: none;
+    font-size: 2rem;
+    margin-bottom: 13rem;
+  }
+
+  .restart {
+    top: 19%;
+    transition: opacity 0.5s ease;
+    // background-color: #4917d3;
+    z-index: 2;
+  }
 }
 
 @media (min-width: 1200px) {
+  .box1 {
+    font-size: 1rem;
+    background-color: red;
+  }
 }
