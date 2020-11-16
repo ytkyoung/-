@@ -215,8 +215,8 @@ section {
           flex-direction: row;
   height: 8%;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
 }
 
 .game-text {
@@ -284,7 +284,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 40%;
+  height: 49%;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
@@ -845,11 +845,6 @@ section {
             flex-direction: row;
     min-height: 90vh;
   }
-  .box1 {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-  }
   #runden-anzahl {
     font-size: 1.5rem;
   }
@@ -917,7 +912,7 @@ section {
   }
   button {
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .game {
     background-color: whitesmoke;
@@ -954,8 +949,8 @@ section {
 @media (min-width: 992px) {
   .box1 {
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
   }
   .intro {
     position: absolute;
@@ -973,7 +968,7 @@ section {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 70.6%;
-    top: 19%;
+    top: 21%;
     width: 80%;
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
@@ -992,7 +987,7 @@ section {
     margin-bottom: 13rem;
   }
   .restart {
-    top: 19%;
+    top: 21%;
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
     z-index: 2;

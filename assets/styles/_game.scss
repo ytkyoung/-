@@ -20,7 +20,7 @@ section {
 .box1 {
   @include flex(center, center, row);
   height: 8%;
-  flex: 1 0 50%;
+  flex: 1 0 100%;
 }
 .game-text {
   background-color: $primary-color-900;
@@ -47,7 +47,7 @@ section {
 
 .box4 {
   @include flex(space-evenly, center, row);
-  height: 40%;
+  height: 49%;
   flex: 1 0 100%;
 }
 // .game-arena {
@@ -403,9 +403,9 @@ section {
     min-height: 90vh;
     // flex-basis: 50%;
   }
-  .box1 {
-    flex: 1 1 100%;
-  }
+  // .box1 {
+  //   flex: 1 1 50%;
+  // }
   #runden-anzahl {
     font-size: 1.5rem;
   }
@@ -447,7 +447,7 @@ section {
   }
   button {
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .game {
     background-color: rgb(245, 245, 245);
@@ -476,14 +476,14 @@ section {
 
 @media (min-width: 992px) {
   .box1 {
-    flex: 1 1 100%;
+    flex: 1 1 50%;
   }
 
   .intro {
     position: absolute;
     @include flex(center, center, column);
     height: 70.6%;
-    top: 19%;
+    top: 21%;
     width: 80%;
     transition: opacity 0.5s ease;
     // background-color: #0278ae;
@@ -505,7 +505,7 @@ section {
   }
 
   .restart {
-    top: 19%;
+    top: 21%;
     transition: opacity 0.5s ease;
     // background-color: #4917d3;
     z-index: 2;
